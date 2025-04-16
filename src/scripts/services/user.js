@@ -1,5 +1,5 @@
 //importando variáveis
-import { baseUrl} from "../variables";
+import { baseUrl} from "../variables.js";
 
 //função que retorna os dados do github do usuário
 async function getUser(userName){

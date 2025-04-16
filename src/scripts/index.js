@@ -1,11 +1,11 @@
 //importando user
-import { getUser} from "./services/user";
+import { getUser} from "./services/user.js";
 //importando repositories
-import { getRepos} from "./services/repositories";
+import { getRepos} from "./services/repositories.js";
 
 //importanto o objetos
-import{user} from './objects/user'
-import{screen} from './objects/screen'
+import{user} from './objects/user.js'
+import{screen} from './objects/screen.js'
 
 //evento - botão conectado ao search e seu valor
 document.getElementById('btn-search').addEventListener('click', () => {
