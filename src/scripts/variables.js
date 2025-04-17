@@ -1,4 +1,4 @@
 const baseUrl = "https://api.github.com/users"
-const repositoriesCount = 10
+const maxItems = 10
 
-export {baseUrl, repositoriesCount}
+export {baseUrl, maxItems}

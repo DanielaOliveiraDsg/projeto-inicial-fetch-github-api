@@ -2,6 +2,9 @@
 import { getUser} from "./services/user.js";
 //importando repositories
 import { getRepos} from "./services/repositories.js";
+//importando events
+import { getEvents } from "./services/events.js"
+
 
 //importanto o objetos
 import{user} from './objects/user.js'
@@ -57,8 +60,11 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepos(userName)
 
+    const eventsResponse = await getEvents(userName)
+
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
+    user.setEvents(eventsResponse)
 
     screen.renderUser(user)
 }
