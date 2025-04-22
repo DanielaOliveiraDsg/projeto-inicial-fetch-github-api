@@ -1,2 +1,2 @@
-# projeto-inicial-fetch-github-api
-Repositório contendo os arquivos iniciais do projeto de Fetch e GitHub API
+# quest-projeto-fetch-github-api
+Quest de JavaScript avançado - usando api do github para buscar github users e informações, como bio, repositórios e últimos eventos.
