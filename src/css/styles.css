@@ -163,11 +163,12 @@ main {
 }
 
 .container .profile-data .events ul li{
-  padding: 20px;
+  padding: 10px;
 
 }
 .container .profile-data .events ul li a{
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 15px;
   transition: 0.3s ease-in-out;
 }
 
@@ -178,6 +179,7 @@ main {
 .container .profile-data .events ul li span{
   color: grey;
   font-size: 12px;
+  margin-left: 10px;
 }
 
 .container .profile-data.hide{
