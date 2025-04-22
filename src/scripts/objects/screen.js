@@ -27,19 +27,18 @@ const screen = {
             </div>`
         }
 
-        this.userProfile.innerHTML += `<h2>Events</h2>`
-
-        let eventPushItems = ''
-        user.events.forEach(event => eventPushItems += `<li><a href="${event.repo.html_url}">${event.repo.name}</a></li><span>${event.payload.commits}</span>`);
-
-        let eventCreateItems = ''
-        user.events.forEach(event => eventCreateItems += `<li><a href="${event.repo.html_url}">${event.repo.name}</a></li>`);
-
-        if (user.events.type === 'PushEvent') {
-            this.userProfile.innerHTML += `<ul>${eventPushItems}</ul>`
-        } else {
-            this.userProfile.innerHTML += `<ul>${eventCreateItems}</ul>`
+        let eventsList = ''
+        if(user.events.length > 0) {
+            user.events.forEach(event => {
+                if(event.type === 'PushEvent') {
+                    eventsList += `<li><a href="${event.repo.html_url}">${event.repo.name}</a><span>- Commit Message: ${event.payload.commits[0].message}</span></li>`
+                } else if (event.type === 'CreateEvent') {
+                    eventsList += `<li><a href="${event.repo.html_url}">${event.repo.name}</a></li>`
+                }
+            })
         }
+
+        this.userProfile.innerHTML += `<div class= "events"><h2>Events</h2><ul>${eventsList}</ul></div>`
     },
     renderNotFound(){
         this.userProfile.innerHTML = '<h3>Usuário não encontrado</h3>'
